@@ -1,0 +1,12 @@
+bedrooms 	5.0 
+bathrooms 	2.5
+sqft_living 	3650
+sqft_lot 	9050
+floors 		2.0
+waterfront 	0
+view 		4
+condition 	5
+sqft_above 	3370
+sqft_basement 	280
+yr_built 	1921
+yr_renovated 	0
