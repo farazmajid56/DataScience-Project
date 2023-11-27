@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regression Model - House Price</title>
+    <link rel="icon" type="image/x-icon" href="/static/house.svg">
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.17/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* Custom CSS */
+      .dark-mode {
+        background-color: #1a202c;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body class="dark-mode">
+    <header class="bg-blue-500 text-white py-8">
+      <div class="container mx-auto px-4">
+        <h1 class="text-3xl font-bold text-center">
+          This is a Regression Model Trained on House Prices of Seattle USA
+        </h1>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+      <form action="/" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="mb-4">
+            <label for="bedrooms" class="block text-gray-100 font-bold mb-2"
+              >Bedrooms:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              step=".1"
+              id="bedrooms"
+              name="bedrooms"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="bathrooms" class="block text-gray-100 font-bold mb-2"
+              >Bathrooms:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              step=".1"
+              id="bathrooms"
+              name="bathrooms"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="waterfront" class="block text-gray-100 font-bold mb-2"
+              >Waterfront:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="waterfront"
+              name="waterfront"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="view" class="block text-gray-100 font-bold mb-2"
+              >View:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="view"
+              name="view"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="sqft_living" class="block text-gray-100 font-bold mb-2"
+              >Sqft Living:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="sqft_living"
+              name="sqft_living"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="sqft_lot" class="block text-gray-100 font-bold mb-2"
+              >Sqft Lot:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="sqft_lot"
+              name="sqft_lot"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="floors" class="block text-gray-100 font-bold mb-2"
+              >Floors:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              step=".1"
+              id="floors"
+              name="floors"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="condition" class="block text-gray-100 font-bold mb-2"
+              >Condition:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="condition"
+              name="condition"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="sqft_above" class="block text-gray-100 font-bold mb-2"
+              >Sqft Above:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="sqft_above"
+              name="sqft_above"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label
+              for="sqft_basement"
+              class="block text-gray-100 font-bold mb-2"
+              >Sqft Basement:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="sqft_basement"
+              name="sqft_basement"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="yr_built" class="block text-gray-100 font-bold mb-2"
+              >Year Built:</label
+            >
+            <input
+              required = "true"
+              default = "0"
+              type="number"
+              id="yr_built"
+              name="yr_built"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="yr_renovated" class="block text-gray-100 font-bold mb-2"
+              >Year Renovated:</label
+            >
+            <input
+            type="number"  
+            required = "true"
+            default = "0"
+              type="number"
+              id="yr_renovated"
+              name="yr_renovated"
+              class="w-full bg-gray-700 border border-blue-500 rounded px-4 py-2 focus:outline-none focus:border-green-500"
+            />
+          </div>
+        </div>
+        <div class="flex justify-center my-8">
+          <input
+            required = "true"
+            default = "0"
+            name="submit"
+            class="text-2xl px-4 py-2 mr-4 bg-green-500 text-white font-bold focus:outline-none rounded-xl px-6 py-2"
+            type="submit"
+          >
+          </input
+            required = "true"
+            default = "0">
+        </div>
+      </form>
+
+    </main>
+
+    <div class="bg-blue-500 py-4">
+      <div class="container mx-auto px-4 my-4">
+        <h2 class="text-4xl font-bold text-center text-white">
+          Predicted Price: {{price}}
+        </h2>
+        <p class="text-center text-blue-800 font-bold">{{metrics}}</p>
+      </div>
+    </div>
+
+    <footer class="bg-gray-800 py-4">
+      <div class="container mx-auto px-4">
+        <p class="text-left text-gray-400">Authors:</p>
+        <p class="text-left text-gray-400">Faraz Majid, Aemon Fatima & Ahmad Abdullah Dhami</p>
+        <p class="text-left text-gray-400">20L-1162 / 20L-1057 / 20L-1226</p>
+        <p class="text-left text-gray-400">All Rights Reserved</p>
+        <p class="text-left text-gray-400">®2023</p>
+      </div>
+    </footer>
+  </body>
+</html>
