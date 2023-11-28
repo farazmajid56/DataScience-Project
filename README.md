@@ -2,6 +2,12 @@
 
 Predicting House Prices in the USA Based on Real Estate Data
 
+## Package Requirements 
+
+- Numpy
+- Flask
+- Joblib
+
 ## How to Run the Frontend
 
 - open the terminal to the frontend folder i.e "cd frontend"
