@@ -3,7 +3,7 @@
 Predicting House Prices in the USA Based on Real Estate Data
 
 ## How to Run the Frontend
-The frontend contains the saved model in /model/ridge_regression_model.joblib.joblib
+The frontend contains the saved model in "/model/ridge_regression_model.joblib"
 ### Package Requirements 
 - Numpy
 - Flask
