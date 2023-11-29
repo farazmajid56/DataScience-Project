@@ -2,14 +2,13 @@
 
 Predicting House Prices in the USA Based on Real Estate Data
 
-## Package Requirements 
-
+## How to Run the Frontend
+* The frontend contains the saved model in model.joblib
+### Package Requirements 
 - Numpy
 - Flask
 - Joblib
-
-## How to Run the Frontend
-
+### Setps:
 - open the terminal to the frontend folder i.e "cd frontend"
 - run the command "python app.py"
 - the apps runs on http://127.0.0.1:5000
